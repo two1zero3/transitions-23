@@ -81,11 +81,14 @@ export class SpringNumber {
         this.velocity = velocity ?? 0;
         this.target = target ?? position ?? 0;
         this.wrap = wrap;
+        this.time = 0;
     }
     /**
      * @param {Number} deltaTime - Simulation delta time in seconds
      */
     step(deltaTime) {
+
+        this.time += deltaTime;
 
         if (this.wrap !== undefined) {
             let distToTarget = this.target - this.position
