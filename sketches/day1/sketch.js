@@ -94,9 +94,9 @@ window.draw = function () {
     // drawUI();
 
     //if mouse distance is less than 100 to center of screen, start transition
-    if (mouseDistanceToCenter.mag() < 100 && mouseIsPressed) {
-        startTransition = true;
-    }
+    // if (mouseDistanceToCenter.mag() < 100 && mouseIsPressed) {
+    //     startTransition = true;
+    // }
     if (mouseDistanceToCenter.mag() < 100 ) {
         startPlayTransition = true;
     }
