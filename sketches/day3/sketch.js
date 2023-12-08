@@ -1,3 +1,4 @@
+import { sendSequenceNextSignal } from "../../shared/sequenceRunner";
 
 function shortestAngleDist(a, b) {
     let diff = b - a;
@@ -80,6 +81,13 @@ class Square {
         if (abs(this.delta) > 2 && this.miniSquares[2].state == 1 && this.state == 6) {
             this.miniSquares[3].state = 1;
             this.state++;
+        }
+        if (this.state == 7 && abs(this.delta) < 0.1) {
+            this.state++;
+        }
+        if (this.state == 8) {
+            noLoop();
+            sendSequenceNextSignal();
         }
     }
     draw() {
